@@ -15,7 +15,7 @@ function RowPost(props) {
             alert("new error")
         })
     
-    }, [])
+    },[])
 
     const opts = {
         height: '390',
