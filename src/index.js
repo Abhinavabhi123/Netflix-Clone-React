@@ -1,13 +1,13 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import Map from './Component/Map.js';
-import Data from './Component/Data.jsx'
+import ReactDOM from 'react-dom/client';
+import Middle from './Component/Middle';
+
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <div>
-    <Map />
-    <Data/>
+    <Middle/>
   </div>
 );

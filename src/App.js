@@ -17,7 +17,7 @@ function App() {
           <div key={index}>
             <h1>{index+1}</h1>
             <h1>{obj.title}</h1>
-            <h4>{obj.body}</h4>
+            <h4>{obj.body}</h4> 
           </div>
         )
       })}
