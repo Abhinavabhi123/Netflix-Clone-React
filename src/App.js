@@ -1,26 +1,19 @@
-import axios from "axios";
-import {useState} from 'react'
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Profile from './Component/Profile';
+import About from './Component/About';
 
 function App() {
-  const [state,setState] = useState([])
+  const [state, setState] = useState('');
+
   return (
-    <div className="App">
-      <h1>Hello World</h1>
-      <button onClick={()=>{
-        axios.get('https://jsonplaceholder.typicode.com/posts').then((response)=>{
-          console.log(response.data);
-          setState(response.data)
-        })
-      }}>click me</button>
-      {state.map((obj,index)=>{
-        return(
-          <div key={index}>
-            <h1>{index+1}</h1>
-            <h1>{obj.title}</h1>
-            <h4>{obj.body}</h4> 
-          </div>
-        )
-      })}
+    <div className='App'>
+      <button onClick={() => setState('about')}>About</button>
+      <button onClick={() => setState('profile')}>Profile</button>
+      <button onClick={() => setState('')}>Reset</button>
+      <Router>
+        <Route path='/about' Component={About} />
+      </Router>
     </div>
   );
 }
